@@ -86,3 +86,11 @@ Dokumentáció
   - POST /profile/follow: felhasználó követése
   - POST /profile/unfollow: leiratkozás
   - POST /logout: kijelentkezés
+
+8. Felületi tervek
+  - ![Főoldal](https://github.com/andosandor601/Andos_N3Y1YS_alkfejl/blob/master/images/Main_Page.jpg)
+  - ![Regisztrációs képernyő](https://github.com/andosandor601/Andos_N3Y1YS_alkfejl/blob/master/images/Regisztr%C3%A1ci%C3%B3s_k%C3%A9perny%C5%91.jpg)
+  - ![Kezdőoldal](https://github.com/andosandor601/Andos_N3Y1YS_alkfejl/blob/master/images/Kezd%C5%91oldal.jpg)
+  - ![Blogbejegyzés megtekintése](https://github.com/andosandor601/Andos_N3Y1YS_alkfejl/blob/master/images/Bejegyz%C3%A9s_megtekint%C3%A9se.jpg)
+  - ![Profil megtekintése](https://github.com/andosandor601/Andos_N3Y1YS_alkfejl/blob/master/images/Profil.jpg)
+  
