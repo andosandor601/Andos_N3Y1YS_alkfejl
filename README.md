@@ -30,5 +30,5 @@ Dokumentáció
   - Felhasználó: A vendég szerepkörén túl saját blogokat, hozzászólásokat írhat, mások bejegyzéseit értékelheti, és követhet más bloggereket, valamint módosíthatja a saját adatait blogbejegyzéseit.
   
 4. Használatoi eset diagram
-![Alt text](Andos_N3Y1YS_alkfejl/images/Use-Case.jpg?raw=true "")
+![Alt tag](Andos_N3Y1YS_alkfejl/images/Use-Case.jpg?raw=true "")
 
