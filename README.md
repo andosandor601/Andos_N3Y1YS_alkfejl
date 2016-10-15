@@ -40,7 +40,8 @@ Dokumentáció
 
 
 6. Oldaltérkép
-Publikus:
+
+  Publikus:
   - Főoldal
   - Blogbejegyzések böngészése
     + Blogbejegyzés megtekintése
@@ -49,7 +50,7 @@ Publikus:
   - Belépés
   - Regisztráció
   
-Felhasználó:
+  Felhasználó:
   - Kilépés
   - Profiladatok
     + Profiladatok módosítása
@@ -63,7 +64,10 @@ Felhasználó:
     + Leiratkozás
     + Profiladatok megtekintése
   
+
+
 7. Végpontok
+
   - GET /: főoldal
   - GET /login: bejelentkező oldal
   - POST /login: bejelentkezési adatok felküldése
