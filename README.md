@@ -32,3 +32,6 @@ Dokumentáció
 4. Használatoi eset diagram
 ![Use-Case diagram](https://github.com/andosandor601/Andos_N3Y1YS_alkfejl/blob/master/images/Use-Case.jpg)
 
+5. Folyamatok meghatározása
+  - Felhasználó
+    - asdf
