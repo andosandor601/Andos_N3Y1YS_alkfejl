@@ -37,3 +37,30 @@ Dokumentáció
     - ![Felhasználó folyamatai](https://github.com/andosandor601/Andos_N3Y1YS_alkfejl/blob/master/images/Felhasznalo_folyamatai.jpg)
   - Vendég
     - ![Vendég folyamatai](https://github.com/andosandor601/Andos_N3Y1YS_alkfejl/blob/master/images/Vend%C3%A9g%20folyamatai.jpg)
+
+
+6. Oldaltérkép
+Publikus:
+  - Főoldal
+  - Blogbejegyzések böngészése
+    + Blogbejegyzés megtekintése
+  - Felhasználók böngészése
+    + Felhasználó megtekintése
+  - Belépés
+  - Regisztráció
+  
+Felhasználó:
+  - Kilépés
+  - Profiladatok
+    + Profiladatok módosítása
+  - Új bejegyzés írása
+  - Bejegyzések böngészése
+    + Saját bejegyzés módosítása
+    + Bejegyzés megtekintése
+      * Új hozzászólás írása
+  - Felhasználók böngészése
+    + Felhasználó követése
+    + Leiratkozás
+    + Profiladatok megtekintése
+  
+    
