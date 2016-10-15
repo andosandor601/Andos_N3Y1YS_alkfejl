@@ -94,3 +94,5 @@ Dokumentáció
   - ![Blogbejegyzés megtekintése](https://github.com/andosandor601/Andos_N3Y1YS_alkfejl/blob/master/images/Bejegyz%C3%A9s_megtekint%C3%A9se.jpg)
   - ![Profil megtekintése](https://github.com/andosandor601/Andos_N3Y1YS_alkfejl/blob/master/images/Profil.jpg)
   
+9. Adatmodell
+  - ![Adatmodell](https://github.com/andosandor601/Andos_N3Y1YS_alkfejl/blob/master/images/entity-relationship.jpg)
