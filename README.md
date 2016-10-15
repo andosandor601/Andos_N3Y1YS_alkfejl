@@ -63,4 +63,22 @@ Felhasználó:
     + Leiratkozás
     + Profiladatok megtekintése
   
-    
+7. Végpontok
+  - GET /: főoldal
+  - GET /login: bejelentkező oldal
+  - POST /login: bejelentkezési adatok felküldése
+  - GET /signup: regisztrációs oldal
+  - POST /signup: regisztrációs adatok felküldése
+  - GET /profile: profiladatok
+  - GET /profile/edit: profiladatok szerkesztése
+  - POST /profile/edit: profiladatok elküldése
+  - GET /blogs: új bejegyzések
+  - GET /blogs/:id: blog megtekintése
+  - POST /blogs/:id/comment: hozzászlás küldése
+  - GET /blogs/create: új bejegyzés felvitele, űrlap megjelenítése
+  - POST /blogss/create: új bejegyzés felvitele, adatok küldése
+  - GET /blogs/edit: bejegyzés módosítása, űrlap megjelenítése
+  - POST /blogss/edit: bejegyzés módosítása, adatok küldése
+  - POST /profile/follow: felhasználó követése
+  - POST /profile/unfollow: leiratkozás
+  - POST /logout: kijelentkezés
