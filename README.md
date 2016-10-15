@@ -34,4 +34,4 @@ Dokumentáció
 
 5. Folyamatok meghatározása
   - Felhasználó
-    - asdf
+    - ![Felhasználó folyamatai](https://github.com/andosandor601/Andos_N3Y1YS_alkfejl/blob/master/images/Felhasznalo_folyamatai.jpg)
