@@ -2,11 +2,12 @@
 
 const Schema = use('Schema')
 
-class BlogTableSchema extends Schema {
+class BlogsTableSchema extends Schema {
 
   up () {
-    this.create('blog', (table) => {
+    this.create('blogs', (table) => {
       table.increments()
+      table.string('title', 255).notNullable()
       table.text('text').notNullable()
       table.integer('likes')
       table.integer('dislikes')
@@ -17,9 +18,9 @@ class BlogTableSchema extends Schema {
   }
 
   down () {
-    this.drop('blog')
+    this.drop('blogs')
   }
 
 }
 
-module.exports = BlogTableSchema
+module.exports = BlogsTableSchema
