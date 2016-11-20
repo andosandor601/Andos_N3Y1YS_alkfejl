@@ -48,7 +48,7 @@ class BlogController {
             return
         }
 
-        blogData.user_id = 1 //ideiglenesen, aztán req.currentUser.id
+        blogData.user_id = req.currentUser.id
         yield Blog.create(blogData);
 
         res.redirect('/');
@@ -70,10 +70,10 @@ class BlogController {
     * edit (req, res){
         const id = req.param('id')
         const blog = yield Blog.find(id)
-        /*if (req.currentUser.id !== blog.user_id) {
+        if (req.currentUser.id !== blog.user_id) {
             res.unauthorized('Nincs jog')
             return
-        }majd autentikáció után */
+        }
 
         const categories = yield Category.all();
 
@@ -103,10 +103,10 @@ class BlogController {
         const id = req.param('id')
         const blog = yield Blog.find(id)
 
-        /*if (req.currentUser.id !== blog.user_id) {
+        if (req.currentUser.id !== blog.user_id) {
             res.unauthorized()
             return
-        } authentikáció utána*/
+        }
 
         blog.title = blogData.title
         blog.text = blogData.text

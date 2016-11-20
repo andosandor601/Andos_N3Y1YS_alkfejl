@@ -1,6 +1,8 @@
-{% extends 'welcomelayout' %}
- 
- {% block content %}
+{% extends 'mainlayout' %}
+
+{% block content %}
+
+<h2>Regisztráció</h2>
 
 {% if old('errors') %}
 <div class="panel panel-danger">
@@ -19,7 +21,7 @@
 
 <form class="form-horizontal" action="" method="post">
 
-{{csrfField}}
+  {{csrfField}}
 
   <fieldset>
     <legend>Nincs fiókod? Regisztrálj</legend>
