@@ -67,6 +67,56 @@ class BlogController {
         })
     }
 
+    * edit (req, res){
+        const id = req.param('id')
+        const blog = yield Blog.find(id)
+        /*if (req.currentUser.id !== blog.user_id) {
+            res.unauthorized('Nincs jog')
+            return
+        }majd autentikáció után */
+
+        const categories = yield Category.all();
+
+        yield res.sendView('editBlog',{
+            categories: categories.toJSON(),
+            blog: blog.toJSON()
+        })
+    }
+    
+    * doEdit (req, res){
+        const blogData = req.except('_csrf');
+        const rules = {
+            title: 'required',
+            text: 'required',
+            category_id: 'required'
+        }
+        const validation = yield Validator.validateAll(blogData, rules);
+        if (validation.fails()){
+            yield req.withAll
+              .andWith({errors: validation.messages()})
+              .flash()
+
+            res.redirect('back')
+            return  
+        }
+
+        const id = req.param('id')
+        const blog = yield Blog.find(id)
+
+        /*if (req.currentUser.id !== blog.user_id) {
+            res.unauthorized()
+            return
+        } authentikáció utána*/
+
+        blog.title = blogData.title
+        blog.text = blogData.text
+        blog.category_id = blogData.category_id
+
+        yield blog.save()
+
+        res.redirect('/')
+    }
+
 }
 
 module.exports = BlogController
