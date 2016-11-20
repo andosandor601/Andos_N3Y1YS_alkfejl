@@ -19,3 +19,5 @@ const Route = use('Route')
 
 //Route.on('/').render('welcome')
 Route.get('/', 'BlogController.index')
+Route.get('/blog/new', 'BlogController.writeNewBlog')
+Route.post('/blog/new', 'BlogController.saveBlog')
