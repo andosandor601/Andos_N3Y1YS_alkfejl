@@ -117,6 +117,17 @@ class BlogController {
         res.redirect('/')
     }
 
+    * doDelete (req, res) {
+        const id = req.param('id')
+        const blog = yield Blog.find(id)
+        if (!blog) {
+            res.notFound('A blog nem létezik')
+            return
+        }
+        yield blog.delete()
+        res.redirect('/');
+    }
+
 }
 
 module.exports = BlogController
