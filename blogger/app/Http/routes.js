@@ -28,6 +28,9 @@ Route.post('/blog/:id/edit', 'BlogController.doEdit').middleware('auth')
 Route.get('/blog/:id/delete', 'BlogController.doDelete').middleware('auth')
 Route.get('/blog', 'BlogController.search')
 
+Route.get('/user', 'BlogController.searchUser')
+Route.get('/user/:id', 'BlogController.showUser')
+
 Route.get('/register', 'UserController.register')
 Route.post('/register', 'UserController.doRegister')
 Route.get('/login', 'UserController.login')

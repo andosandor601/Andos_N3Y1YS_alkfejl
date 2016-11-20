@@ -160,6 +160,41 @@ class BlogController {
 
     }
 
+    * searchUser(req, res){
+        const page = Math.max(1, req.input('p'))
+        const filters = {
+            userName: req.input('userName') || '',
+            email: req.input('category') || '',
+        }
+
+        const users = yield User.query()
+            .where(function () {
+                if (filters.userName.length > 0) this.where('username', 'LIKE', `%${filters.userName}%`)
+                if (filters.email.length > 0) this.where('email', 'LIKE', `%${filters.email}%`)
+            })
+            .paginate(page, 9)
+
+        yield res.sendView('searchUser', {
+            users: users.toJSON(),
+            filters
+        })    
+
+    }
+
+    * showUser(req, res){
+        const id = req.param('id')
+        const user = yield User.find(id)
+        if (!user) {
+            res.notFound('Nem létezik ilyen user')
+            return
+        }
+        const blogs = yield user.blog().fetch()
+        yield res.sendView('showUser', {
+            user: user.toJSON(),
+            blogs: blogs.toJSON()
+        })
+    }
+
 }
 
 module.exports = BlogController
