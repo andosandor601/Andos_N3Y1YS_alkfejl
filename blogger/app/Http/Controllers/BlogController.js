@@ -128,6 +128,35 @@ class BlogController {
         res.redirect('/');
     }
 
+    * search(req, res){
+        const page = Math.max(1, req.input('p'))
+        const filters = {
+            blogTitle: req.input('blogTitle') || '',
+            category: req.input('category') || 0,
+            createdBy: req.input('createdBy') || 0
+        }
+
+        const blogs = yield Blog.query()
+            .where(function () {
+                if (filters.category > 0) this.where('category_id', filters.category)
+                if (filters.createdBy > 0) this.where('user_id', filters.createdBy)
+                if (filters.blogTitle.length > 0) this.where('title', 'LIKE', `%${filters.blogTitle}%`)
+            })
+            .with('user')
+            .paginate(page, 9)
+
+        const categories = yield Category.all()
+        const users = yield User.all()
+
+        yield res.sendView('searchBlog', {
+            blogs: blogs.toJSON(),
+            categories: categories.toJSON(),
+            users: users.toJSON(),
+            filters
+        })    
+
+    }
+
 }
 
 module.exports = BlogController
