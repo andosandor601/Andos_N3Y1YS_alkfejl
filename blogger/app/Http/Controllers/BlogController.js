@@ -54,6 +54,19 @@ class BlogController {
         res.redirect('/');
     }
 
+    * show (req, res){
+        const id = req.param('id')
+        const blog = yield Blog.find(id)
+        if (!blog) {
+            res.notFound('Nem létezik ilyen blogbejegyzés')
+            return
+        }
+        yield blog.related('category').load()
+        yield res.sendView('showBlog', {
+            blog: blog.toJSON()
+        })
+    }
+
 }
 
 module.exports = BlogController

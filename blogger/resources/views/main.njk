@@ -12,7 +12,9 @@
        <ul class="list-group">
          {% for blogs in category.topBlogs %}
          <li class="list-group-item">
+           <a href="/blog/{{blogs.id}}">
            {{ blogs.title }}
+           </a>
          </li>
          {% endfor %}
        </ul>
