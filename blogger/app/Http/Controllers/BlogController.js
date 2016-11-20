@@ -61,9 +61,12 @@ class BlogController {
             res.notFound('Nem létezik ilyen blogbejegyzés')
             return
         }
+        const comments = yield blog.comment().fetch()
         yield blog.related('category').load()
         yield res.sendView('showBlog', {
-            blog: blog.toJSON()
+            blog: blog.toJSON(),
+            comments: comments.toJSON()
+
         })
     }
 
