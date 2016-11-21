@@ -17,12 +17,18 @@
 {%for com in comments %}
 <div>
     <ul>
-        <li>{{com.text}}</li>
+        <li>
+           {{com.text}}
+           {% if currentUser.id == com.user_id %}
+           <form class="form-horizontal" action="" method="post">
+             <a class="btn btn-danger" href="/blog/{{blog.id}}/comment/{{com.id}}/delete" role="button">Hozzászólás törlése</a>
+           </form>
+           {% endif %}
+        </li>
     </ul>
 </div>
 {% endfor %}
 
-{% if currentUser.id == blog.user_id %}
     <form class="form-horizontal" action="" method="post">
     {{csrfField}}
         <div class="form-group">
@@ -38,6 +44,5 @@
     </div>
   </div>
     </form>
-{% endif %}
 
 {% endblock %}

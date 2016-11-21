@@ -33,6 +33,17 @@ class CommentController {
         res.redirect('back');
     }
 
+    * delete(req, res){
+        const id = req.param('cid')
+        const comment = yield Comment.find(id)
+        if (!comment) {
+            res.notFound('A comment nem létezik')
+            return
+        }
+        yield comment.delete()
+        res.redirect('back');
+    }
+
 }
 
 module.exports = CommentController
