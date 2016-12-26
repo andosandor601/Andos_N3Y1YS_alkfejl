@@ -1,14 +1,24 @@
-{% extends 'mainlayout' %}
+{% extends 'mainlayout.njk' %}
+<script
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
+<script src="/search.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+{% block scripts %}
+alert('hello')
+{% endblock %}
 
 {% block title %}Blog bejegyzések böngészése{% endblock %}
 {% block content %}
   <h1>Blog bejegyzések böngészése</h1>
-  <form action="/blog" method="GET">
+  <form id="search" action="/blog" method="GET">
     <div class="row">
       <div class="col-md-3">
         <div class="form-group">
           <label for="inputBlogTitle">Bejegyzés címe</label>
-          <input type="text" class="form-control" placeholder="Bejegyzés címe" id="inputBlogTitle" name="blogTitle" value="{{ filters.blogTitle }}">
+          <input id="blogTitle" name="blogTitle" autocomplete="off">
+          <div class="suggestions"></div>
         </div>
       </div>
       <div class="col-md-3">

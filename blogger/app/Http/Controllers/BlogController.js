@@ -131,6 +131,17 @@ class BlogController {
         res.redirect('/');
     }
 
+    * ajaxDelete(req, res){
+        const id = req.param('id')
+        const blog = yield Blog.find(id)
+        if(!blog){
+            res.notFound('Hiba a feldolgozás során')
+            return
+        }
+        yield blog.delete()
+        res.ok({success: true})
+    }
+
     * search(req, res){
         const page = Math.max(1, req.input('p'))
         const filters = {
@@ -160,6 +171,21 @@ class BlogController {
 
     }
 
+    * ajaxSearch(req, res){
+        var query = req.input('blogTitle');
+        if (!query) {
+            res.ok([]);
+            return;
+        }
+
+        var blogs = yield Blog.query()
+        .where(function (){
+            this.where('title', 'LIKE', '%'+query+'%')
+        });
+
+        res.ok(blogs);
+    }
+
     * searchUser(req, res){
         const page = Math.max(1, req.input('p'))
         const filters = {
@@ -179,6 +205,21 @@ class BlogController {
             filters
         })    
 
+    }
+
+    * ajaxUserSearch(req, res){
+        var query = req.input('userName');
+        if (!query) {
+            res.ok([]);
+            return;
+        }
+
+        var users = yield User.query()
+        .where(function (){
+            this.where('username', 'LIKE', '%'+query+'%')
+        });
+
+        res.ok(users);
     }
 
     * showUser(req, res){

@@ -1,7 +1,8 @@
 {% extends 'mainlayout' %}
 
 {% block scripts %}
-<script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.5/validator.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.9.0/validator.min.js"></script>
+
 {% endblock %}
 
 {% block content %}
@@ -32,6 +33,8 @@
     <div class="col-lg-10">
       <input type="email" class="form-control" id="email" name="email" placeholder="Email cím" data-error="Nem e-mail-cím"
         value="{{ old('email') }}" required>
+        <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+        <div class="help-block with-errors"></div>
     </div>
   </div>
   <div class="form-group has-feedback">
@@ -39,10 +42,12 @@
     <div class="col-lg-10">
       <input type="password" class="form-control" id="password" name="password" placeholder="Jelszó" data-minlength="6"
         value="" required>
+        <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+        <div class="help-block with-errors"></div>
     </div>
   </div>
   
-  <div class="form-group">
+  <div class="form-group has-feedback">
     <div class="col-lg-10 col-lg-offset-2">
       <button type="reset" class="btn btn-default">Cancel</button>
       <button type="submit" class="btn btn-primary">Submit</button>

@@ -1,14 +1,22 @@
-{% extends 'mainlayout' %}
+{% extends 'mainlayout.njk' %}
+{% block scripts %}
+<script
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
+<script src="/searchUser.js"></script>
+{% endblock %}
 
 {% block title %}Felhasználók böngészése{% endblock %}
 {% block content %}
   <h1>Felhasználók böngészése</h1>
-  <form action="/user" method="GET">
+  <form id="searchUser" action="/user" method="GET">
     <div class="row">
       <div class="col-md-3">
         <div class="form-group">
           <label for="inputUserName">Felhasználó neve</label>
-          <input type="text" class="form-control" placeholder="Felhasználóinév" id="inputUserName" name="userName" value="{{ filters.userName }}">
+          <input autocomplete="off" name="userName">
+          <div class="list-group user-suggestions suggestions"></div>
         </div>
       </div>
       <div class="col-md-3">
