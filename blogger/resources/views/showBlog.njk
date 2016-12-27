@@ -1,6 +1,10 @@
-{% extends 'mainlayout.njk' %}
+{% extends 'mainlayout' %}
 
 {% block scripts %}
+<script
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
 <script src="/showBlog.js"></script>
 {% endblock %}
 
@@ -15,9 +19,10 @@
 
 {% if currentUser.id == blog.user_id %}
 {{ csrfField | safe }}
+<span class="help-block"></span>
 <a class="btn btn-primary" href="/blog/{{blog.id}}/edit" role="button">Szerkeszt</a>
 <a id="btnDelete" class="btn btn-danger" href="/blog/{{blog.id}}/delete" role="button">Töröl</a>
-<span class="help-block"></span>
+
 
 <div class="modal fade confirm-modal" tabindex="-1" role="dialog">
     <div class="modal-dialog modal-sm" role="document">

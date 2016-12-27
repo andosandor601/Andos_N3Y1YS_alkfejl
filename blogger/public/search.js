@@ -1,5 +1,4 @@
 $(function(){
-    alert('hello')
     $('#search [name=blogTitle]').on('input', function(){
         $.get('/ajax/blog',{
             blogTitle:$(this).val()
