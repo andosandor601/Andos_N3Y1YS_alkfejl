@@ -4,7 +4,7 @@ function ajaxDelete(url) {
   }
   return Promise.resolve(
     $.ajax({
-      url:  `/ajax/recipe/${id}/delete`,
+      url,
       method: 'DELETE',
       dataType: 'json',
       headers
@@ -33,20 +33,20 @@ function my_confirm(question) {
     _reject = reject
   })
 }
-
-$('#btnDelete').on('click', function (e) {
-  e.preventDefault()
-  my_confirm('Biztos törölni akarod?').then(response => {
-    if (response) {
-      // /ajax/recipes/3/delete
-      const url = '/ajax' + $(this).attr('href')
-      ajaxDelete(url)
-        .then(data => {
-          location.assign('/blog')
-        })
-        .catch(xhr => {
-          $('.help-block').text(xhr.responseText)
-        })
-    }
+$(document).ready(function(){
+  $('#btnDelete').on('click', function (e) {
+    e.preventDefault()
+    my_confirm('Biztos törölni akarod?').then(response => {
+      if (response) {
+        const url = '/ajax' + $(this).attr('href')
+        ajaxDelete(url)
+          .then(data => {
+            location.assign('/blog')
+          })
+          .catch(xhr => {
+            $('.help-block').text(xhr.responseText)
+          })
+      }
+    })
   })
 })

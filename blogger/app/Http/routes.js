@@ -40,6 +40,7 @@ Route.get('/logout', 'UserController.doLogout')
 
 Route.group('ajax', function () {
   Route.delete('/blog/:id/delete', 'BlogController.ajaxDelete').middleware('auth')
-  Route.get('/blog', 'BlogController.ajaxSearch').middleware('auth')
-  Route.get('/user', 'BlogController.ajaxUserSearch').middleware('auth')
+  Route.delete('/blog/:id/comment/:cid/delete', 'CommentController.ajaxDelete').middleware('auth')
+  Route.get('/blog', 'BlogController.ajaxSearch')
+  Route.get('/user', 'BlogController.ajaxUserSearch')
 }).prefix('/ajax'); 

@@ -131,15 +131,15 @@ class BlogController {
         res.redirect('/');
     }
 
-    *ajaxDelete(request, response) {
-        const id = request.param('id')
+    *ajaxDelete(req, res) {
+        const id = req.param('id')
         const blog = yield Blog.find(id)
         if (!blog) {
-        response.notFound('Hiba történt a feldolgozás során!')
+        res.notFound('Hiba történt a feldolgozás során!')
         return
         }
         yield blog.delete()
-        response.ok({success: true});
+        res.ok({success: true});
     }
 
     * search(req, res){

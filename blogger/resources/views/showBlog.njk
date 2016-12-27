@@ -1,11 +1,9 @@
 {% extends 'mainlayout' %}
 
 {% block scripts %}
-<script
-  src="https://code.jquery.com/jquery-3.1.1.min.js"
-  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
-  crossorigin="anonymous"></script>
 <script src="/showBlog.js"></script>
+<script src="/deleteComment.js"></script>
+
 {% endblock %}
 
 {% block content %}
@@ -42,14 +40,16 @@
 {%for com in comments %}
 <div>
     <ul>
-        <li>
-           {{com.text}}
-           {% if currentUser.id == com.user_id %}
-           <form class="form-horizontal" action="" method="post">
-             <a class="btn btn-danger" href="/blog/{{blog.id}}/comment/{{com.id}}/delete" role="button">Hozzászólás törlése</a>
+        
+            <form id="{{com.id}}" class="form-horizontal" action="dl" method="post">  
+                <li>          
+                <div>{{com.text}}</div>     
+                {% if currentUser.id == com.user_id %}
+                <a class="btn btn-danger comDelete" href="/blog/{{blog.id}}/comment/{{com.id}}/delete" role="button">Hozzászólás törlése</a>
+                {% endif %}
+                 </li>
            </form>
-           {% endif %}
-        </li>
+       
     </ul>
 </div>
 {% endfor %}

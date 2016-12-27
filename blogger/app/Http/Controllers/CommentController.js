@@ -44,6 +44,17 @@ class CommentController {
         res.redirect('back');
     }
 
+    * ajaxDelete(req, res){
+        const id = req.param('cid')
+        const comment = yield Comment.find(id)
+        if (!comment) {
+            res.notFound('Hiba történt a feldolgozás során!')
+            return
+        }
+        yield comment.delete()
+        res.ok({success: true});
+    }
+
 }
 
 module.exports = CommentController
