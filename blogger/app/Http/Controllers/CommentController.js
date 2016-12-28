@@ -34,17 +34,16 @@ class CommentController {
     }
 
     *ajaxCreate(req, res){
-        const id = req.param('id')
-        console.log('\n')
-        if (!req.param('text')) {
-            console.log(req.param('valami'))
-            console.log('na ezért üres a com')
+        const id = req.input('id')
+        console.log(id)
+        console.log(req.input('text'))
+        if (!req.input('text')) {
             res.ok([])
             return
         }
 
         const com=new Comment()
-        com.text=req.param('text');
+        com.text=req.input('text');
         com.user_id=req.currentUser.id
         com.blog_id=id;
         yield com.save();
