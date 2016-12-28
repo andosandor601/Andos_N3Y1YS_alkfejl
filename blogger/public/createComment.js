@@ -11,7 +11,7 @@ $(document).ready(function(){
                 valami: "szia",
                 id:  $(this).attr('action').split('/')[2],
                 text:  $('#newCommentText').val()
-            },
+            }.serializeArray(),
             dataType: 'html',
             method: 'POST',
             headers

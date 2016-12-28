@@ -1,5 +1,14 @@
 {% extends 'mainlayout' %}
  
+{% block scripts %}
+<script src="/main.js"></script>
+<script src="/popup_login.js"></script>
+{% endblock %}
+
+{% block styles %}
+<link rel="stylesheet" href="/search.css">
+ {% endblock %}
+
  {% block content %}
  <div class="row">
   {% for category in categories %}

@@ -42,6 +42,7 @@ Route.group('ajax', function () {
   Route.delete('/blog/:id/delete', 'BlogController.ajaxDelete').middleware('auth')
   Route.delete('/blog/:id/comment/:cid/delete', 'CommentController.ajaxDelete').middleware('auth')
   Route.post('/blog/:id', 'CommentController.ajaxCreate').middleware('auth')
+  Route.post('/login', 'UserController.ajaxLogin')
   Route.get('/blog', 'BlogController.ajaxSearch')
   Route.get('/user', 'BlogController.ajaxUserSearch')
 }).prefix('/ajax'); 

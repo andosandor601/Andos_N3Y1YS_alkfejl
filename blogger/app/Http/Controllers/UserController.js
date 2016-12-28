@@ -66,6 +66,24 @@ class UserController {
         }
     }
 
+    * ajaxLogin(req, res){
+        const email = req.input('email')
+        const password = req.input('password')
+
+        try {
+            const login = yield req.auth.attempt(email, password) 
+
+            if (login) {
+                res.ok({ success: true })
+                return
+            }
+        }
+        catch (err) {
+            res.ok({ success: false })
+            return
+        }
+    }
+
     * doLogout(req, res){
         yield req.auth.logout()
         res.redirect('/')
