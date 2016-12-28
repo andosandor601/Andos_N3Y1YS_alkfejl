@@ -3,7 +3,7 @@
 {% block scripts %}
 <script src="/showBlog.js"></script>
 <script src="/deleteComment.js"></script>
-
+<script src="/createComment.js"></script>
 {% endblock %}
 
 {% block content %}
@@ -41,7 +41,7 @@
 <div>
     <ul>
         
-            <form id="{{com.id}}" class="form-horizontal" action="dl" method="post">  
+            <form id="{{com.id}}" class="form-horizontal commentform" action="dl" method="post">  
                 <li>          
                 <div>{{com.text}}</div>     
                 {% if currentUser.id == com.user_id %}
@@ -53,21 +53,24 @@
     </ul>
 </div>
 {% endfor %}
+<div class="newComDiv"></div>
 
-    <form class="form-horizontal" action="" method="post">
-    {{csrfField}}
+
+   
+    <form id="subCom" class="form-horizontal" action="/blog/{{blog.id}}" method="post">
+         
         <div class="form-group">
-      <label for="text" class="col-lg-2 control-label">Új hozzászólás</label>
-      <div class="col-lg-10">
-        <input type="text" class="form-control" id="text" name="text" placeholder="Hozzászólás">
-      </div>
-    </div>
+            <label for="text" class="col-lg-2 control-label">Új hozzászólás</label>
+            <div class="col-lg-10">
+                <input type="text" class="form-control" id="newCommentText" name="text" placeholder="Hozzászólás">
+            </div>
+        </div>
 
-    <div class="form-group">
-    <div class="col-lg-10 col-lg-offset-2">
-      <button type="submit" class="btn btn-primary">Submit</button>
-    </div>
-  </div>
+        <div class="form-group">
+            <div class="col-lg-10 col-lg-offset-2">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </div>
     </form>
 
 {% endblock %}

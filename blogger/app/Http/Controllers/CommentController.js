@@ -33,6 +33,24 @@ class CommentController {
         res.redirect('back');
     }
 
+    *ajaxCreate(req, res){
+        const id = req.param('id')
+        console.log('\n')
+        if (!req.param('text')) {
+            console.log(req.param('valami'))
+            console.log('na ezért üres a com')
+            res.ok([])
+            return
+        }
+
+        const com=new Comment()
+        com.text=req.param('text');
+        com.user_id=req.currentUser.id
+        com.blog_id=id;
+        yield com.save();
+        res.ok(com);
+    }
+
     * delete(req, res){
         const id = req.param('cid')
         const comment = yield Comment.find(id)
