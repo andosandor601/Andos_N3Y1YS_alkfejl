@@ -96,3 +96,19 @@ Dokumentáció
   
 9. Adatmodell
   - ![Adatmodell](https://github.com/andosandor601/Andos_N3Y1YS_alkfejl/blob/master/images/entity-relationship.jpg)
+
+10. Kliens-oldali bővítés
+  - popup-login.js
+    + A bejelentkezéshez való ajaxos javascript fut le, a bejelentkezés nem egy külön oldalon történik meg, hanem egy felugró ablakban, amint ez megtörtént az oldal fejléce is frissül.
+  - search.js
+    + Egy blog keresésénél az automatikus találatok megjelenítése linkekkel, így gyorsabbá téve a folyamatot.
+  - searchUser.js
+    + Egy user keresésénél az automatikus találatok megjelenítése linkekkel, így gyorsabbá téve a folyamatot.
+  - showBlog.js
+    + Blog törlése ajaxos megoldással
+  - createComment.js
+    + Commentelési lehetőség ajax-al
+  - deleteComment.js
+    + Comment törlése ajax megvalósítással
+    
+11. tesztelés    
