@@ -113,3 +113,10 @@ Dokumentáció
     + Comment törlése ajax megvalósítással
     
 11. tesztelés    
+  - Selenium IDE-vel, telepítése: https://addons.mozilla.org/hu/firefox/addon/selenium-ide/
+  - Ctrl+Alt+S billentyűkombinációval elérhető, vagy eszköztárból kiválasztható.
+  - Tesztek(blogger/tests könyvtárban):
+  - signup
+  - logout
+  - login
+  - createBlog
