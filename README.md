@@ -102,6 +102,7 @@ Dokumentáció
     + A bejelentkezéshez való ajaxos javascript fut le, a bejelentkezés nem egy külön oldalon történik meg, hanem egy felugró ablakban, amint ez megtörtént az oldal fejléce is frissül.
   - search.js
     + Egy blog keresésénél az automatikus találatok megjelenítése linkekkel, így gyorsabbá téve a folyamatot.
+    ![folyamatábra](https://github.com/andosandor601/Andos_N3Y1YS_alkfejl/blob/master/images/Kereses(ajax).jpg)
   - searchUser.js
     + Egy user keresésénél az automatikus találatok megjelenítése linkekkel, így gyorsabbá téve a folyamatot.
   - showBlog.js
